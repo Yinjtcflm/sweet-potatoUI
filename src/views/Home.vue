@@ -5,8 +5,8 @@
       <h1>红薯UI</h1>
       <h2>一个UI框架</h2>
       <p class="actions">
-        <a>GitHub</a>
-        <a href="">开始</a>
+        <a href="https://github.com">GitHub</a>
+        <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
@@ -18,23 +18,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-// .topnav {
-//   background: pink;
-//   display: flex;
-//   padding: 16px;
-//   > .logo {
-//     max-width: 6em;
-//     margin-right: auto;
-//   }
-//   > .menu {
-//     display: flex;
-//     white-space: nowrap;
-//     flex-wrap: nowrap;
-//   }
-//   > li {
-//     margin: 0 1em;
-//   }
-// }
 .banner {
   padding: 100px 0;
   display: flex;
