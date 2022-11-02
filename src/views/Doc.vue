@@ -19,7 +19,7 @@
           </li>
         </ol>
       </aside>
-      <main>主内容</main>
+      <main><router-view /></main>
     </div>
   </div>
 </template>
@@ -29,10 +29,10 @@ import { inject, Ref } from "vue";
 import Topnav from "../components/Topnav.vue";
 export default {
   components: { Topnav },
-  setup(){
-     const menuVisible = inject<Ref<boolean>>('menuVisible') 
-    return {menuVisible}
-  }
+  setup() {
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
+    return { menuVisible };
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -40,10 +40,7 @@ aside {
   background: lightblue;
   width: 150px;
   padding: 16px;
-  position: fixed;
-  padding-top: 64px;
-  top: 0;
-  left: 0;
+
   > h2 {
     margin-bottom: 4px;
   }
@@ -51,6 +48,12 @@ aside {
     > li {
       padding: 4px 0;
     }
+  }
+  @media (max-width: 500px) {
+    position: fixed;
+    padding-top: 64px;
+    top: 0;
+    left: 0;
   }
 }
 </style>
