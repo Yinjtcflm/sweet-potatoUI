@@ -3,7 +3,7 @@
     <Topnav />
     <div class="banner">
       <h1>红薯UI</h1>
-      <h2>一个UI框架</h2>
+      <h2>一个 UI 框架</h2>
       <p class="actions">
         <a href="https://github.com">GitHub</a>
         <router-link to="/doc">开始</router-link>
