@@ -1,5 +1,5 @@
 <template>
-  <button class="hs-button" :class="classes">
+  <button class="hs-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -18,6 +18,10 @@ export default {
     level: {
       type: String,
       default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: "false",
     },
   },
   setup(props) {
@@ -41,7 +45,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
-.hs-button {
+&grey:grey .hs-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -98,8 +102,8 @@ $red: red;
     height: 24px;
     padding: 0 4px;
   }
-  &.gulu-theme-button {
-    &.gulu-level-main {
+  &.hs-theme-button {
+    &.hs-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -109,7 +113,7 @@ $red: red;
         border-color: darken($blue, 10%);
       }
     }
-    &.gulu-level-danger {
+    &.hs-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -120,8 +124,8 @@ $red: red;
       }
     }
   }
-  &.gulu-theme-link {
-    &.gulu-level-danger {
+  &.hs-theme-link {
+    &.hs-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -129,20 +133,36 @@ $red: red;
       }
     }
   }
-  &.gulu-theme-text {
-    &.gulu-level-main {
+  &.hs-theme-text {
+    &.hs-level-main {
       color: $blue;
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
-    &.gulu-level-danger {
+    &.hs-level-danger {
       color: $red;
       &:hover,
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+  &.gulu-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.gulu-theme-link,
+  &.gulu-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
