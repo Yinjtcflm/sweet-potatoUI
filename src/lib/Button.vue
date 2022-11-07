@@ -1,16 +1,15 @@
 <template>
-  <div>
-    <button v-bind="$attrs">
-      <slot />
-    </button>
-  </div>
+  <button class="potato-button" :class="{ [`theme-${theme}`]: theme }">
+    <slot />
+  </button>
 </template>
 <script lang="ts">
 export default {
-  inheritAttrs: false,
-  setup(props, context) {
-    const { size, ...rest } = context.attrs;
-    return { size, rest };
+  props: {
+    theme: {
+      type: String,
+      default: "button",
+    },
   },
 };
 </script>
