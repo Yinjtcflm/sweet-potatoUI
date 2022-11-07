@@ -1,15 +1,30 @@
 <template>
-  <button class="hs-button" :class="{ [`hs-theme-${theme}`]: theme }">
+  <button class="hs-button" :class="classes">
     <slot />
   </button>
 </template>
 <script lang="ts">
+import { computed } from "vue";
 export default {
   props: {
     theme: {
       type: String,
       default: "button",
     },
+    size: {
+      type: String,
+      default: "normal",
+    },
+  },
+  setup(props) {
+    const { theme, size } = props;
+    const classes = computed(() => {
+      return {
+        [`hs-theme-${theme}`]: theme,
+        [`hs-size-${size}`]: size,
+      };
+    });
+    return { classes };
   },
 };
 </script>
@@ -47,6 +62,36 @@ $radius: 4px;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+  &.hs-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+  }
+  &.hs-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
+  }
+  &.hs-theme-button {
+    &.hs-size-big {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px;
+    }
+    &.hs-size-small {
+      font-size: 12px;
+      height: 24px;
+      padding: 0 4px;
+    }
   }
 }
 </style>

@@ -2,10 +2,16 @@
   <div>button</div>
   <h1>示例1</h1>
   <div>
-    <Button>你好</Button>
-    <Button theme="button">你好</Button>
-    <Button theme="link">你好</Button>
-    <Button theme="text">你好</Button>
+    <Button>按钮</Button>
+    <Button theme="button">按钮</Button>
+    <Button theme="link">按钮</Button>
+    <Button theme="text">按钮</Button>
+  </div>
+  <h1>示例2</h1>
+  <div>
+    <Button size="big">Big</Button>
+    <Button>按钮</Button>
+    <Button size="small">Small</Button>
   </div>
 </template>
 
