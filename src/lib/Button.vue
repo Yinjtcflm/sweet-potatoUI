@@ -81,7 +81,6 @@ $radius: 4px;
       background: darken(white, 5%);
     }
   }
-  &.hs-theme-button {
     &.hs-size-big {
       font-size: 24px;
       height: 48px;
@@ -93,5 +92,5 @@ $radius: 4px;
       padding: 0 4px;
     }
   }
-}
+
 </style>
