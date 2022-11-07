@@ -22,11 +22,11 @@ export default {
     },
     disabled: {
       type: Boolean,
-      default: "false",
+      default: false,
     },
     loading: {
       type: Boolean,
-      default: "false",
+      default: false,
     },
   },
   setup(props) {
@@ -42,15 +42,15 @@ export default {
   },
 };
 </script>
-
 <style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
-$red: red;
-&grey:grey .hs-button {
+$orange: orange;
+$grey: grey;
+.hs-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -104,7 +104,7 @@ $red: red;
   }
   &.hs-size-small {
     font-size: 12px;
-    height: 24px;
+    height: 20px;
     padding: 0 4px;
   }
   &.hs-theme-button {
@@ -119,22 +119,22 @@ $red: red;
       }
     }
     &.hs-level-danger {
-      background: $red;
-      border-color: $red;
+      background: $orange;
+      border-color: $orange;
       color: white;
       &:hover,
       &:focus {
-        background: darken($red, 10%);
-        border-color: darken($red, 10%);
+        background: darken($orange, 10%);
+        border-color: darken($orange, 10%);
       }
     }
   }
   &.hs-theme-link {
     &.hs-level-danger {
-      color: $red;
+      color: $orange;
       &:hover,
       &:focus {
-        color: darken($red, 10%);
+        color: darken($orange, 10%);
       }
     }
   }
@@ -147,10 +147,10 @@ $red: red;
       }
     }
     &.hs-level-danger {
-      color: $red;
+      color: $orange;
       &:hover,
       &:focus {
-        color: darken($red, 10%);
+        color: darken($orange, 10%);
       }
     }
   }
@@ -181,13 +181,13 @@ $red: red;
     border-width: 2px;
     animation: hs-spin 1s infinite linear;
   }
-  @keyframes hs-spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+}
+@keyframes hs-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>
