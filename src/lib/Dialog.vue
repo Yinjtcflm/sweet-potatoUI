@@ -1,23 +1,31 @@
 <template>
-  <div class="hs-dialog-overlay"></div>
-  <div class="hs-dialog-wrapper">
-    <div class="hs-dialog">
-      <header>这是一个提示 <span class="hs-dialog-close"></span></header>
-      <main>
-        <p>红薯</p>
-        <p>冬天必吃！</p>
-      </main>
-      <footer>
-        <Button level="main">OK</Button>
-        <Button>Cancel</Button>
-      </footer>
+  <template v-if="visible">
+    <div class="hs-dialog-overlay"></div>
+    <div class="hs-dialog-wrapper">
+      <div class="hs-dialog">
+        <header>这是一个提示 <span class="hs-dialog-close"></span></header>
+        <main>
+          <p>红薯</p>
+          <p>冬天必吃！</p>
+        </main>
+        <footer>
+          <Button level="main">OK</Button>
+          <Button>Cancel</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <script lang="ts">
 import Button from "./Button.vue";
 export default {
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+  },
   components: { Button },
 };
 </script>
