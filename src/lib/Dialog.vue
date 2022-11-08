@@ -1,16 +1,18 @@
 <template>
   <template v-if="visible">
-    <div class="hs-dialog-overlay"></div>
+    <div class="hs-dialog-overlay" @click="closeOnClickOverlay"></div>
     <div class="hs-dialog-wrapper">
       <div class="hs-dialog">
-        <header>这是一个提示 <span class="hs-dialog-close"></span></header>
+        <header>
+          这是一个提示 <span @click="close" class="hs-dialog-close"></span>
+        </header>
         <main>
           <p>红薯</p>
           <p>冬天必吃！</p>
         </main>
         <footer>
-          <Button level="main">OK</Button>
-          <Button>Cancel</Button>
+          <Button level="main" @click="ok">OK</Button>
+          <Button @click="cancel">Cancel</Button>
         </footer>
       </div>
     </div>
@@ -25,8 +27,38 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    ok: {
+      type: Function,
+    },
+    cancel: {
+      type: Function,
+    },
   },
   components: { Button },
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const closeOnClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close();
+      }
+    };
+    const ok = () => {
+      if (props.ok?.() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      context.emit("cancel");
+      close();
+    };
+    return { close, closeOnClickOverlay, ok, cancel };
+  },
 };
 </script>
 
