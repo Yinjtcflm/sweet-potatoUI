@@ -7,7 +7,10 @@
     :closeOnClickOverlay="false"
     :ok="f1"
     :cancel="f2"
-  ></Dialog>
+  >
+    <div>红薯</div>
+    <div>冬天必吃！</div>
+  </Dialog>
 </template>
 
 <script lang="ts">
