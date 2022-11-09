@@ -1,21 +1,32 @@
 <template>
   <div>dialog示例</div>
   <h1>示例1</h1>
-  <Button @click="toggle">toggle</Button>
-  <Dialog
-    v-model:visible="x"
-    :closeOnClickOverlay="false"
-    :ok="f1"
-    :cancel="f2"
-  >
-    <template v-slot:content>
-      <strong>红薯</strong>
-      <div>冬天必吃！</div>
-    </template>
-    <template v-slot:title> 
-      <strong>这是一个提示</strong>
-    </template>
-  </Dialog>
+  <div style="position: relative; z-index: 1">
+    <Button @click="toggle">toggle</Button>
+    <Dialog
+      v-model:visible="x"
+      :closeOnClickOverlay="false"
+      :ok="f1"
+      :cancel="f2"
+    >
+      <template v-slot:content>
+        <strong>红薯</strong>
+        <div>冬天必吃！</div>
+      </template>
+      <template v-slot:title>
+        <strong>这是一个提示</strong>
+      </template>
+    </Dialog>
+  </div>
+  <div
+    style="
+      position: relative;
+      z-index: 2;
+      width: 300px;
+      height: 300px;
+      background: red;
+    "
+  ></div>
 </template>
 
 <script lang="ts">
