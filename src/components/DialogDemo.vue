@@ -8,8 +8,13 @@
     :ok="f1"
     :cancel="f2"
   >
-    <div>红薯</div>
-    <div>冬天必吃！</div>
+    <template v-slot:content>
+      <strong>红薯</strong>
+      <div>冬天必吃！</div>
+    </template>
+    <template v-slot:title> 
+      <strong>这是一个提示</strong>
+    </template>
   </Dialog>
 </template>
 

@@ -4,10 +4,11 @@
     <div class="hs-dialog-wrapper">
       <div class="hs-dialog">
         <header>
-          {{ title }} <span @click="close" class="hs-dialog-close"></span>
+          <slot name="title" />
+          <span @click="close" class="hs-dialog-close"></span>
         </header>
         <main>
-          <slot />
+          <slot name="content" />
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
@@ -22,10 +23,6 @@
 import Button from "./Button.vue";
 export default {
   props: {
-    title: {
-      type: String,
-      default: "这是一个提示",
-    },
     visible: {
       type: Boolean,
       default: false,
