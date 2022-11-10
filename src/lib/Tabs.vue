@@ -1,14 +1,22 @@
 <template>
   <div class="hs-tabs">
     <div class="hs-tabs-nav">
-      <div class="hs-tabs-nav-item" v-for="(t, index) in titles" :key="index">
+      <div
+        class="hs-tabs-nav-item"
+        v-for="(t, index) in titles"
+        @click="select(t)"
+        :class="{ selected: t === selected }"
+        :key="index"
+      >
         {{ t }}
       </div>
+      <div class="hs-tabs-nav-indicator"></div>
     </div>
     <div class="hs-tabs-content">
       <component
         class="hs-tabs-content-item"
-        v-for="(c, index) in defaults"
+        :class="{ selected: c.props.title === selected }"
+        v-for="c in defaults"
         :is="c"
         :key="index"
       />
@@ -16,9 +24,14 @@
   </div>
 </template>
 <script lang="ts">
-import { takeCoverage } from "v8";
+import { computed } from "@vue/runtime-core";
 import Tab from "./Tab.vue";
 export default {
+  props: {
+    selected: {
+      type: String,
+    },
+  },
   setup(props, context) {
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
@@ -26,10 +39,19 @@ export default {
         throw new Error("Tabs子标签必须是Tab");
       }
     });
+    const current = computed(() => {
+      console.log("重新 return");
+      return defaults.filter((tag) => {
+        return tag.props.title === props.selected;
+      })[0];
+    });
     const titles = defaults.map((tag) => {
       return tag.props!.title;
     });
-    return { defaults, titles };
+    const select = (title: string) => {
+      context.emit("update:selected", title);
+    };
+    return { defaults, titles, current, select };
   },
 };
 </script>
@@ -54,9 +76,23 @@ $border-color: #d9d9d9;
         color: $blue;
       }
     }
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
+    }
   }
   &-content {
     padding: 8px 0;
+    &-item {
+      display: none;
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
