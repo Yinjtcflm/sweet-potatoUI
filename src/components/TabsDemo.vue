@@ -10,12 +10,12 @@
 <script lang="ts">
 import Tabs from "../lib/Tabs.vue";
 import Tab from "../lib/Tab.vue";
-import { ref } from "@vue/reactivity";
+import { ref } from "vue";
 
 export default {
   components: { Tabs, Tab },
   setup() {
-    const x = ref("导航1");
+    const x = ref("导航2");
     return { x };
   },
 };

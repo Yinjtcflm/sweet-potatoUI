@@ -22,9 +22,10 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { computed, onMounted, ref, watchEffect } from "@vue/runtime-core";
+  
+  <script lang="ts">
 import Tab from "./Tab.vue";
+import { computed, ref, watchEffect, onMounted } from "vue";
 export default {
   props: {
     selected: {
@@ -45,14 +46,14 @@ export default {
         indicator.value.style.left = left + "px";
       });
     });
-    const defaults = context.slots.default();
+    const defaults = context.slots.default!();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
-        throw new Error("Tabs子标签必须是Tab");
+        throw new Error("Tabs 子标签必须是 Tab");
       }
     });
     const current = computed(() => {
-      return defaults.find((tag) => tag.props.title === props.selected);
+      return defaults.find((tag) => tag.props!.title === props.selected);
     });
     const titles = defaults.map((tag) => {
       return tag.props!.title;
@@ -72,8 +73,8 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
+  
+  <style lang="scss">
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
@@ -82,6 +83,7 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
     &-item {
       padding: 8px 0;
       margin: 0 16px;
@@ -105,12 +107,6 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 8px 0;
-    &-item {
-      display: none;
-      &.selected {
-        display: block;
-      }
-    }
   }
 }
 </style>
