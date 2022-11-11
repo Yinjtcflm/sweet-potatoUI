@@ -41,6 +41,7 @@ $color: #007974;
     rgba(92, 223, 243, 1) 100%,
     rgba(0, 212, 255, 1) 100%
   );
+  clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {
   > svg {
