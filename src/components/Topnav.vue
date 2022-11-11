@@ -82,7 +82,7 @@ $color: #007974;
   }
   @media (max-width: 500px) {
     > .menu {
-      display: none;
+      display: block;
     }
     > .logo {
       margin: 0 auto;
