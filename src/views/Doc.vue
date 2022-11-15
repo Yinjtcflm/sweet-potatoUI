@@ -50,6 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$aside-index: 2;
 .router-link-active {
   text-decoration: underline;
 }
@@ -89,6 +90,7 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
+  z-index: $aside-index;
   > h2 {
     margin-bottom: 4px;
     padding: 0 16px;
