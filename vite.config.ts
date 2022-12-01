@@ -10,8 +10,11 @@ export default {
     demo: (options) => {
       const { code, path } = options;
       const file = fs.readFileSync(path).toString();
+      //@ts-ignore
       const parsed = baseParse(file).children.find((n) => n.tag === "demo");
+      //@ts-ignore
       const title = parsed!.children[0].content;
+      //@ts-ignore
       const main = file.split(parsed.loc.source).join("").trim();
       return `export default function (Component) {
         Component.__sourceCode = ${JSON.stringify(main)}

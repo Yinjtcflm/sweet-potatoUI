@@ -6,6 +6,7 @@
         v-for="(t, index) in titles"
         :ref="
           (el) => {
+            //@ts-ignore
             if (t === selected) selectedItem = el;
           }
         "
@@ -33,8 +34,11 @@ export default {
     },
   },
   setup(props, context) {
+    //@ts-ignore
     const selectedItem = ref<HTMLDivElement>(null);
+    //@ts-ignore
     const indicator = ref<HTMLDivElement>(null);
+    //@ts-ignore
     const container = ref<HTMLDivElement>(null);
     onMounted(() => {
       watchEffect(() => {
