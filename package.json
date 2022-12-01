@@ -5,6 +5,9 @@
     "dev": "vite",
     "build": "vite build"
   },
+  "resolutions":{
+    "node-sass":"npm:sass@^1.26.1"
+  },
   "dependencies": {
     "github-markdown-css": "^5.1.0",
     "prismjs": "1.21.0",
