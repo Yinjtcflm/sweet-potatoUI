@@ -1,8 +1,11 @@
 {
   "name": "sweetpotato-ui",
   "version": "0.0.1",
-  "files": ["dist/lib/*"],
+  "files": [
+    "dist/lib/*"
+  ],
   "main": "dist/lib/sweetpotato.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
@@ -25,5 +28,17 @@
     "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.56.1",
     "vite": "^1.0.0-rc.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yinjtcflm/sweet-potatoUI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yinjtcflm/sweet-potatoUI/issues"
+  },
+  "homepage": "https://github.com/Yinjtcflm/sweet-potatoUI#readme",
+  "description": ""
 }
