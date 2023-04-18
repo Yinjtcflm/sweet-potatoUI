@@ -5,7 +5,7 @@
 然后在你的代码中写入下面的代码：
 
 ```
-import {Button, Tabs, Switch, Dialog} from "king-ui"
+import {Button, Tabs, Switch, Dialog} from "sweetpotato-ui"
 ```
 
 就能使用该组件了。

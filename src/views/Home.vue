@@ -40,20 +40,21 @@
 </template>
 <script lang="ts">
 import Topnav from "../components/Topnav.vue";
+
 export default {
   components: { Topnav },
 };
 </script>
 <style lang="scss" scoped>
-$green: #02bcb0;
+$green: #bc654c;
 $border-radius: 4px;
-$color: #007974;
+$color: #795900;
 .topnavAndBanner {
   background: linear-gradient(
     145deg,
-    rgba(183, 233, 230, 1) 100%,
-    rgba(92, 223, 243, 1) 100%,
-    rgba(0, 212, 255, 1) 100%
+    rgb(236, 191, 177) 100%,
+    rgb(208, 120, 93) 100%,
+    rgb(255, 89, 0) 100%
   );
   clip-path: ellipse(80% 60% at 50% 40%);
 }
@@ -118,7 +119,7 @@ $color: #007974;
       background: $green;
       color: white;
       display: inline-block;
-      padding: 8 24px;
+      padding: 8px 24px;
       border-radius: $border-radius;
       &:hover {
         text-decoration: none;

@@ -82,7 +82,7 @@ $aside-index: 2;
   }
 }
 aside {
-  background: lightblue;
+  background: lightpink;
   width: 150px;
   padding: 16px 0;
   position: fixed;

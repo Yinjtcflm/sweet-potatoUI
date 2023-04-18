@@ -3,12 +3,12 @@
 打开终端运行下列命令:
 
 ```
-npm install Sweetpotato-ui
+npm install sweetpotato-ui
 ```
 或者
 
 ```    
-yarn add crisps-ui</code></pre>
+yarn add sweetpotato-ui
 ```
 
 下一节：[开始使用](#doc/get-started)
