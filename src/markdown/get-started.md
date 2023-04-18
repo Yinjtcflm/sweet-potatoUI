@@ -5,7 +5,7 @@
 然后在你的代码中写入下面的代码：
 
 ```
-import {Button, Tabs, Switch, Dialog} from "sweetpotato-ui"
+import {Button, Tabs, Tab,Switch, Dialog,openDialog} from "sweetpotato-ui"
 ```
 
 就能使用该组件了。
@@ -21,7 +21,7 @@ import {Button, Tabs, Switch, Dialog} from "sweetpotato-ui"
   </div>
 </template>
 <script>
-import {Button, Tabs, Switch, Dialog} from "sweetpotato-ui"
+import {Button, Tabs,Tab, Switch, Dialog,openDialog} from "sweetpotato-ui"
 export default {
   components: {Button}
 }
