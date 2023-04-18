@@ -19,7 +19,7 @@ const props = defineProps<{
   loading?: boolean;
 }>();
 
-const { theme, size, level } = props;
+const { theme='button', size, level } = props;
 defineEmits<{
   (e: "click", event: MouseEvent): void;
 }>();
@@ -40,7 +40,7 @@ $radius: 4px;
 $orange: orange;
 $grey: grey;
 
-.hs-button {
+button.hs-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
