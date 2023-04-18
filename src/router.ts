@@ -46,3 +46,4 @@ export const router = createRouter({
     },
   ],
 });
+router.afterEach(() => {});
