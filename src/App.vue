@@ -14,3 +14,4 @@ router.afterEach(() => {
     menuVisible.value = false;
   }
 });
+</script>

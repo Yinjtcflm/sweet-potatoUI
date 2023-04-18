@@ -5,15 +5,12 @@
 </template>
 
 <script lang="ts" setup="props, context">
-import { ref, SetupContext } from "vue";
-declare const props: { value: boolean };
-declare const context: SetupContext;
-export default {
-  props: {
-    value: Boolean,
-  },
-  export const toggle = () => {
-  context.emit("update:value", !props.value);
+const props = defineProps<{ value: boolean }>();
+const emit = defineEmits<{
+  (e: "update:value", visible: boolean): void;
+}>();
+const toggle = () => {
+  emit("update:value", !props.value);
 };
 </script>
 

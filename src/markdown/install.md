@@ -2,12 +2,12 @@
 
 打开终端运行下列命令:
 
-```
+```bash
 npm install sweetpotato-ui
 ```
 或者
 
-```    
+```bash    
 yarn add sweetpotato-ui
 ```
 

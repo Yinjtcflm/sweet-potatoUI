@@ -1,44 +1,29 @@
 <template>
-  <button class="hs-button" :class="classes" :disabled="disabled">
+  <button
+    class="hs-button"
+    :class="classes"
+    :disabled="disabled"
+    @click="$emit('click', $event)"
+  >
     <span v-if="loading" class="hs-loadingIndicator"></span>
     <slot />
   </button>
 </template>
 <script lang="ts" setup="props">
 import { computed } from "vue";
-declare const props: {
+const props = defineProps<{
   theme?: "button" | "text" | "link";
   size?: "normal" | "big" | "small";
   level?: "normal" | "main" | "danger";
-  disabled: boolean;
-  loading: boolean;
-};
-export default {
-  props: {
-    theme: {
-      type: String,
-      default: "button",
-    },
-    size: {
-      type: String,
-      default: "normal",
-    },
-    level: {
-      type: String,
-      default: "normal",
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-  },
-};
+  disabled?: boolean;
+  loading?: boolean;
+}>();
+
 const { theme, size, level } = props;
-export const classes = computed(() => {
+defineEmits<{
+  (e: "click", event: MouseEvent): void;
+}>();
+const classes = computed(() => {
   return {
     [`hs-theme-${theme}`]: theme,
     [`hs-size-${size}`]: size,
