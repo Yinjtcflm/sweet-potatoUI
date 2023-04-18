@@ -6,15 +6,23 @@ import { terser } from "rollup-plugin-terser";
 
 export default {
   input: "src/lib/index.ts",
-  output: {
-    globals: {
-      vue: "Vue",
+  output: [
+    {
+      globals: {
+        vue: "Vue",
+      },
+      name: "Sweetpotato",
+      file: "dist/lib/sweetpotato.js",
+      format: "umd",
+      plugins: [terser()],
     },
-    name: "Sweetpotato",
-    file: "dist/lib/sweetpotato.js",
-    format: "umd",
-    plugins: [terser()],
-  },
+    {
+      name: "sweetpotato",
+      file: "dist/lib/sweetpotato.esm.js",
+      format: "es",
+      plugins: [terser()],
+    },
+  ],
   plugins: [
     scss({ include: /\.scss$/, sass: dartSass }),
     esbuild({

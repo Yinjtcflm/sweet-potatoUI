@@ -5,6 +5,7 @@
     "dist/lib/*"
   ],
   "main": "dist/lib/sweetpotato.js",
+  "module": "dist/lib/sweetpotato.esm.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
