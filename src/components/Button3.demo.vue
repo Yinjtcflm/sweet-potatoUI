@@ -1,21 +1,21 @@
 <demo>支持 level</demo>
 <template>
-  <div>
-    <dir>
+  <div class="button3">
+    <div>
       <Button level="main">主要按钮</Button>
       <Button>普通按钮</Button>
       <Button level="danger">危险按钮</Button>
-    </dir>
-    <dir>
+    </div>
+    <div class="link">
       <Button theme="link" level="main">Main link</Button>
       <Button theme="link">Normal link</Button>
       <Button theme="link" level="danger">Danger link</Button>
-    </dir>
-    <dir>
+    </div>
+    <div class="text">
       <Button theme="text" level="main">Main text</Button>
       <Button theme="text">Normal text</Button>
       <Button theme="text" level="danger">Danger text</Button>
-    </dir>
+    </div>
   </div>
 </template>
 
@@ -27,3 +27,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.button3 {
+  .link {
+    padding: 8px 0;
+  }
+}
+</style>

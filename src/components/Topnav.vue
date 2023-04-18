@@ -36,22 +36,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #007974;
-
 .topnav {
-  color: $color;
+  color: #db7093;
+  height: 3rem;
   display: flex;
-  padding: 16px;
   position: fixed;
+  z-index: 3000;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 10;
-  justify-content: center;
+  right: 0;
+  justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid;
+  background: #fff;
+  box-shadow: 0 3px 3px #db7093;
   > .logo {
     max-width: 6em;
-    margin-right: auto;
+    margin-left: 32px;
     > svg {
       width: 32px;
       height: 32px;
@@ -61,6 +62,7 @@ $color: #007974;
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
+    margin-right: 32px;
   }
   > li {
     margin: 0 1em;

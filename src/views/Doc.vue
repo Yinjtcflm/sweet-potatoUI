@@ -78,7 +78,9 @@ $aside-index: 2;
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: white;
+    background: #f5f5f5;
+    border-radius: 4px;
+    overflow: hidden;
   }
 }
 aside {

@@ -1,6 +1,6 @@
 <demo>支持 disabled</demo>
 <template>
-  <div>
+  <div class="button4">
     <Button disabled>Disabled</Button>
     <Button theme="link" disabled>Disabled link</Button>
     <Button theme="text" disabled>Disabled text</Button>
@@ -19,3 +19,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.button4 {
+  > Button {
+    padding: 8px 0;
+  }
+}
+</style>
